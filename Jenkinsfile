@@ -1,11 +1,6 @@
 pipeline {
-  agent {
-    kubernetes {
-      	cloud 'kubernetes'
-      	defaultContainer 'jnlp'
-      }
-    }
-  stages {
+  agent any 
+    stages {
     stage('Deploy App') {
       steps {
         script {
