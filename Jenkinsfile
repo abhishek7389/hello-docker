@@ -2,7 +2,6 @@ pipeline {
   agent {
     kubernetes {
       	cloud 'kubernetes'
-      	label 'default'
       	defaultContainer 'jnlp'
       }
     }
@@ -10,7 +9,7 @@ pipeline {
     stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "hellodocker.yaml", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "hellodocker.yml", kubeconfigId: "mykubeconfig")
         }
       }
     }
